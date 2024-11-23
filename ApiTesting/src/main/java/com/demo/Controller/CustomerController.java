@@ -18,4 +18,12 @@ public class CustomerController {
 
 
 }
+ @GetMapping("/api/customers")
+    public String getCustomer(@RequestParam(required = false) String id) {
+        if (id != null) {
+            return "Customer details for ID: " + id;
+        } else {
+            return "List of all customers";
+        }
+    }
 }
